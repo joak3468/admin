@@ -1,19 +1,28 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import LoginView from '../views/LoginView.vue'; 
-import ClientsListView  from '../views/ClientsListView.vue';
+import ClientsListView  from '../views/client/ClientsListView.vue';
 import CreateView from '../views/client/CreateView.vue';
+import UpdateView from '../views/client/UpdateView.vue';
 import useAuthStore from '@/store/auth';
-
+import HomeInvoiceView from '../views/invoice/HomeInvoiceView.vue';
 
 const routes = [    
     {
-        path: '/create_client',
+        path: '/client/create',
         name: 'createClient',
         component: CreateView,
         meta: {
             requireAuth: true
         }
-    },       
+    },    
+    {
+        path: '/client/update/:id',
+        name: 'updateClient',
+        component: UpdateView,
+        meta: {
+            requireAuth: true
+        }
+    },          
     {
         path: '/clients',
         name: 'clients',
@@ -21,23 +30,7 @@ const routes = [
         meta: {
             requireAuth: true
         }
-    },    
-    // {
-    //     path: '/blog',
-    //     name: 'blog',
-    //     component: BlogView,
-    //     meta: {
-    //         requireAuth: false
-    //     }
-    // },    
-    // {
-    //     path: '/blog/:id',
-    //     name: 'post',
-    //     component: PostView,
-    //     meta: {
-    //         requireAuth: false
-    //     }
-    // },    
+    },  
     {
         path: '/',
         name: 'home',
@@ -53,7 +46,15 @@ const routes = [
         meta: {
             requireAuth: false
         }
-    }
+    },
+    {
+        path: '/Invoice',
+        name: 'invoice',
+        component: HomeInvoiceView,
+        meta: {
+            requireAuth: true
+        }
+    } 
 
 ];
 

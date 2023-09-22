@@ -1,6 +1,4 @@
 <template>
-
-<div class="container">
     <table class="table custom-table">
         <thead>
         <tr>
@@ -13,29 +11,39 @@
             <th>Email</th>
             <th>Mensaje</th>
             <th>Estado</th>
+            <th>Modificar</th>
+            <th>Crear Factura</th>
+            <th>M. Estado</th>
         </tr>
         </thead>
         <tbody>
         <tr v-for="client in clients" :key="client.id">
-            <td>{{ client.name }}</td>
-            <td>{{ client.cuil }}</td>
-            <td>{{ client.iva }}</td>
-            <td>{{ client.address }}</td>
-            <td>{{ client.sale_condition }}</td>
-            <td>{{ client.price }}</td>
-            <td>{{ client.email }}</td>
-            <td>{{ client.message }}</td>
-            <td>{{ client.status == 1 ? 'Activo' : 'Inactivo' }}</td>
+            <td class="client-item"> {{ client.name }}</td>
+            <td class="client-item"> {{ client.cuil }}</td>
+            <td class="client-item"> {{ client.iva }}</td>
+            <td class="client-item"> {{ client.address }}</td>
+            <td class="client-item"> {{ client.sale_condition }}</td>
+            <td class="client-item"> {{ client.price }}</td>
+            <td class="client-item"> {{ client.email }}</td>
+            <td class="client-item"> {{ client.message }}</td>
+            <td class="client-item"> {{ client.status == 1 ? 'Activo' : 'Inactivo' }}</td>
+            <td class="client-item"><router-link :to="{name: 'updateClient', params: {id: client.id}}"><ion-icon name="build-sharp"></ion-icon></router-link></td>
+            <td class="client-item"> <ion-icon name="create-sharp"></ion-icon></td>
+            <td class="client-item">
+                <ion-icon v-if="client.status == 1" name="close-circle-sharp"></ion-icon>
+                <ion-icon v-else name="chevron-down-circle-sharp"></ion-icon>
+            </td>
         </tr>
         </tbody>
     </table>
-    </div>
 </template>
 
 <script setup>
     import { ref, onMounted } from 'vue';
     import { useClientStore } from '@/store/client';
     import useAuthStore from '@/store/auth';
+
+
 
     const store = useAuthStore();
 

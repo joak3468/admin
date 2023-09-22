@@ -14,64 +14,6 @@ const appUrl = document.querySelector('meta[name="app-url"]').getAttribute('cont
 
 const pinia = createPinia();
 
-
-//import ExampleComponent from './components/Test/ExampleComponent.vue';
-//app.component('example-component', ExampleComponent);
-
-//app.mount('#app');
-
-import ComputerExample from './components/Test/ComputerExample.vue';
-createApp({ components: { ComputerExample } }).mount('#computerExample');
-
-import VideoSixExample from './components/Test/VideoSixExample.vue';
-createApp({ components: { VideoSixExample } }).mount('#videoSixExample');
-
-
-
-//import PostList from './components/Test/PostList.vue';
-//createApp({ components: { PostList } }).mount('#postList');
-
-
-
-
-//import CycleOption from './components/Test/CycleOption.vue';
-//createApp({ components: { CycleOption } }).mount('#cycleOption');
-
-
-// import PostContainer from './components/Test/PostContainer.vue';
-// createApp({ components: { PostContainer } }).mount('#PostContainer');
-
-
-// import CounterOptions from './components/Test/CounterOptions.vue';
-// createApp({ components: { CounterOptions } }).mount('#app');
-
-// import ExampleSelective from './components/Test/ExampleSelective.vue';
-// createApp({ components: { ExampleSelective } }).mount('#example-selective');
-
-
-// import ClassBind from './components/Test/ClassBind.vue';
-// createApp({ components: { ClassBind } }).mount('#classBind');
-
-
-
-
-// import ModelForm from './components/Test/ModelForm.vue';
-// createApp({ components: { ModelForm } }).mount('#modelForm');
-
-
-
-
-// import TeacherForm from './components/Test/TeacherForm.vue';
-// createApp({ components: { TeacherForm } }).mount('#teacherForm');
-
-
-
-//app.mount('#postCountainer');
-//import AppComponent from './components/Test/App.vue';
-//createApp(AppComponent).mount("#");
-
-
-
 import Main from './App.vue';
 
 const main = createApp(Main);

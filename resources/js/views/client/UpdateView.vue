@@ -1,6 +1,6 @@
 <template>
     <Base>
-        <h3>Crear nuevo cliente:</h3>
+        <h3>Actualizar cliente:</h3>
         <clientForm/>
     </Base>
 </template>
