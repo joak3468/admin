@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { useAuthStore } from "./auth";
 
-export const useClientStore = defineStore('invoice', {
+export const useInvoiceStore = defineStore('invoice', {
     state: () => {
         return {
             baseURL: 'http://admin.test/api',
@@ -14,19 +14,18 @@ export const useClientStore = defineStore('invoice', {
             return await response.json();
         },
 
-        async getClient(content) {
-            const queryParams = new URLSearchParams(content).toString();
-            const response  = await this.sendRequest("GET", `/client?${queryParams}`);
-            return await response.json(); 
-        },
-
         async create(content) {
             const response  = await this.sendRequest("POST", "/create_invoice", content);
             return await response.json();
         },
 
         async update(content) {
-            const response  = await this.sendRequest("POST", "/update_client", content);
+            const response  = await this.sendRequest("POST", "/update_invoice", content);
+            return await response.json();
+        },
+
+        async delete(content) {
+            const response  = await this.sendRequest("POST", "/delete_invoice", content);
             return await response.json();
         },
 

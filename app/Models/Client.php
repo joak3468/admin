@@ -17,4 +17,13 @@ class Client extends Model
         return $this->hasMany(Invoice::class);
     }
 
+    public static function active() {
+        return self::where('status', 1);
+    }    
+    
+    public static function inactive() {
+        return self::where('status', 0);
+    }
+    
+
 }

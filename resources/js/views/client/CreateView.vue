@@ -1,11 +1,13 @@
 <template>
     <Base>
+        <NavBar/>
         <h3>Crear nuevo cliente:</h3>
-        <clientForm/>
+        <Form/>
     </Base>
 </template>
 
 <script setup>
-import clientForm from '@/components/client/ClientForm.vue';
+import Form from '@/components/client/Form.vue';
 import Base from '@/layout/Base.vue';
+import NavBar from '@/layout/client/NavBar.vue';
 </script>

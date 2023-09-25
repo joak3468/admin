@@ -10,19 +10,36 @@ use App\Http\Request\CreateClientRequest;
 
 class ClientController extends Controller
 {
-    public function home(){
-
-        $clients = Client::get();
+    public function getAll(){
+        $clients = Client::orderBy('status','desc')->get();
         return response()->json($clients);
     }    
-    
-    public function getClient(Request $request) {
-        $clientID = $request->query('client_id');
-        $userID = $request->query('user_id');
-        $client = Client::where('id', $clientID)->where('user_id', $userID)->first();
-        return response()->json($client);
+
+    public function getById(Request $request) {
+        return response()->json($this->_getClientInformacion($request));
     }
 
+    public function getName(Request $request){
+        $client = $this->_getClientInformacion($request);
+        return response()->json($client->name);
+    }    
+    
+    
+    public function getActive(Request $request){
+        $clients = Client::active()->get();
+        return response()->json($clients);
+    }   
+    
+    public function getInactive(Request $request){
+        $clients = Client::inactive()->get();
+        return response()->json($clients);
+    }
+
+    private function _getClientInformacion($request){
+        $clientID = $request->query('client_id');
+        $userID = $request->query('user_id');
+        return Client::where('id', $clientID)->where('user_id', $userID)->first();
+    }
 
     public function create(Request $request) {
         Client::create([
@@ -40,8 +57,6 @@ class ClientController extends Controller
         return response()->json(['message' => 'Client create successfully', 'status' => 200], 200);
     }
 
-
-
     public function update(Request $request) {
         $client = Client::findOrFail($request->id);
         $client->name = $request->name;
@@ -58,7 +73,13 @@ class ClientController extends Controller
 
 
 
-    public function updateStatus() {
-        //
+    public function updateStatus(Request $request) {
+        $client = Client::findOrFail($request->client_id);
+        $client->status = $request->status;
+        $client->save();
+        return response()->json(['message' => 'Client status updated successfully', 'status' => 200], 200);
     }
+ 
+    
+    //deleteClient(){}
 }

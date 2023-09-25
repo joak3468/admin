@@ -3,8 +3,7 @@
         <div class="container-fluid">
             <div class="d-flex justify-content-start">
             <router-link :to="{ name: 'clients' }">Clientes</router-link>
-            <router-link :to="{ name: 'createClient' }">Nuevo Cliente</router-link>
-            <router-link :to="{name: 'invoice'}">Facturas</router-link>
+            <router-link :to="{name: 'invoices'}">Facturas</router-link>
             </div>
             <div class="d-flex justify-content-end">
             <button type="button" @click="logout" class="btn btn-outline-danger">Logout</button>
@@ -35,6 +34,7 @@ nav {
     margin-bottom: 20px;
     a {
         font-weight: bold;
+        font-size: 18px;
         color: #2c3e50;
         margin-right: 10px;
         &.router-link-exact-active{

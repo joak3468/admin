@@ -12,6 +12,14 @@ export const useClientStore = defineStore('client', {
         async getClients() {
             const response  = await this.sendRequest("GET", "/clients");
             return await response.json();
+        },        
+        async getActiveClients() {
+            const response  = await this.sendRequest("GET", "/clients_active");
+            return await response.json();
+        },        
+        async getInactiveClients() {
+            const response  = await this.sendRequest("GET", "/clients_inactive");
+            return await response.json();
         },
 
         async getClient(content) {
@@ -25,8 +33,19 @@ export const useClientStore = defineStore('client', {
             return await response.json();
         },
 
+        async getName( content ) {
+            const queryParams = new URLSearchParams(content).toString();
+            const response  = await this.sendRequest("GET", `/client/name?${queryParams}`);
+            return await response.json(); 
+        },
+
         async update(content) {
             const response  = await this.sendRequest("POST", "/update_client", content);
+            return await response.json();
+        },        
+        
+        async updateStatus(content) {
+            const response  = await this.sendRequest("POST", "/update_client_status", content);
             return await response.json();
         },
 
@@ -34,7 +53,6 @@ export const useClientStore = defineStore('client', {
             try {
                 let jwt = useAuthStore().getToken();
                 const url = `${this.baseURL}${path}`;
-
                 const headers = {
                     'Content-Type': 'Applications/json',
                     'Accept': 'Application/json',

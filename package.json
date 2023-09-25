@@ -17,6 +17,7 @@
         "vue": "^3.2.37"
     },
     "dependencies": {
+        "date-fns": "^2.30.0",
         "pinia": "^2.1.6",
         "vue-env": "^0.2.1-moved",
         "vue-router": "^4.2.4"
