@@ -14,6 +14,7 @@ ___INFO___
   "version": 1,
   "securityGroups": [],
   "displayName": "soicos_template",
+  "categories": ["ADVERTISING"],
   "brand": {
     "id": "brand_dummy",
     "displayName": "",
