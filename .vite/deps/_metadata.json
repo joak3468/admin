@@ -1,0 +1,62 @@
+{
+  "hash": "def97995",
+  "browserHash": "291a04c2",
+  "optimized": {
+    "vue": {
+      "src": "../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "fe7edbed",
+      "needsInterop": false
+    },
+    "pinia": {
+      "src": "../../node_modules/pinia/dist/pinia.mjs",
+      "file": "pinia.js",
+      "fileHash": "76fb7756",
+      "needsInterop": false
+    },
+    "v-calendar": {
+      "src": "../../node_modules/v-calendar/dist/es/index.js",
+      "file": "v-calendar.js",
+      "fileHash": "21326cca",
+      "needsInterop": false
+    },
+    "vue-cookies": {
+      "src": "../../node_modules/vue-cookies/vue-cookies.js",
+      "file": "vue-cookies.js",
+      "fileHash": "06619e5b",
+      "needsInterop": true
+    },
+    "bootstrap": {
+      "src": "../../node_modules/bootstrap/dist/js/bootstrap.esm.js",
+      "file": "bootstrap.js",
+      "fileHash": "71f9018c",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "0dd2f3de",
+      "needsInterop": false
+    },
+    "vue-router": {
+      "src": "../../node_modules/vue-router/dist/vue-router.mjs",
+      "file": "vue-router.js",
+      "fileHash": "0941c7aa",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-3GOOGFKQ": {
+      "file": "chunk-3GOOGFKQ.js"
+    },
+    "chunk-2QJY3INN": {
+      "file": "chunk-2QJY3INN.js"
+    },
+    "chunk-FYHJDCKL": {
+      "file": "chunk-FYHJDCKL.js"
+    },
+    "chunk-6TJCVOLN": {
+      "file": "chunk-6TJCVOLN.js"
+    }
+  }
+}
