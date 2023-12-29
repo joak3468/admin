@@ -4,18 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Client;
 use App\Models\User;
-<<<<<<< HEAD
 use App\Models\PriceSummary;
-=======
->>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
 use Illuminate\Http\Request;
 use App\Http\Request\CreateClientRequest;
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
 class ClientController extends Controller
 {
     public function getAll(){
@@ -67,13 +61,10 @@ class ClientController extends Controller
 
     public function update(Request $request) {
         $client = Client::findOrFail($request->id);
-<<<<<<< HEAD
 
         if($client->price != $request->price)
             PriceSummary::create([ 'client_id' => $client->id, 'price' => $client->price ]);
 
-=======
->>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
         $client->name = $request->name;
         $client->cuil = $request->cuil;
         $client->iva = $request->iva;

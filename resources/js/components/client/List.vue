@@ -1,11 +1,8 @@
 <template>
-<<<<<<< HEAD
          <div class="col-md-2 mb-2 d-flex align-items-center">
         <span class="me-2">Cliente:</span>
         <input v-model="clienteFilter" type="text" class="form-control">
       </div>
-=======
->>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
     <table class="table custom-table">
         <thead>
         <tr>
@@ -24,11 +21,7 @@
         </tr>
         </thead>
         <tbody>
-<<<<<<< HEAD
         <tr v-for="client in filteredInvoices" :key="client.id">
-=======
-        <tr v-for="client in props.clients" :key="client.id">
->>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
             <td class="client-item"> {{ client.name }}</td>
             <td class="client-item"> {{ client.cuil }}</td>
             <td class="client-item"> {{ client.iva }}</td>
@@ -41,13 +34,8 @@
             <td class="client-item"><router-link :to="{name: 'client.update', params: {id: client.id}}" class="route"><ion-icon name="build-sharp"></ion-icon></router-link></td>
             <td class="client-item" @click="createInvoice(client.id, client.price)"><router-link :to="{name: 'invoices'}" class="route"><ion-icon name="create-sharp"></ion-icon></router-link></td>
             <td v-if="props.view == 'Home'" class="client-item">
-<<<<<<< HEAD
                 <button @click="emits('updateStatus',client.id, 0)" class="btn" v-if="client.status == 1" ><ion-icon name="close-circle-sharp"></ion-icon></button>
                 <button @click="emits('updateStatus',client.id, 1)" class="btn" v-else><ion-icon name="chevron-down-circle-sharp"></ion-icon></button>
-=======
-                <button @click="updateStatus(client.id, 0)" class="btn" v-if="client.status == 1" ><ion-icon name="close-circle-sharp"></ion-icon></button>
-                <button @click="updateStatus(client.id, 1)" class="btn" v-else><ion-icon name="chevron-down-circle-sharp"></ion-icon></button>
->>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
             </td>
         </tr>
         </tbody>
@@ -55,29 +43,14 @@
 </template>
 
 <script setup>
-<<<<<<< HEAD
 import { ref, defineProps, defineEmits, computed, onMounted } from 'vue';
 import { useInvoiceStore } from '@/store/invoice';
-=======
-
-
-
-
-
-import { ref, onMounted, defineProps, watch } from 'vue';
-import { useClientStore } from '@/store/client';
-import useAuthStore from '@/store/auth';
-import { useInvoiceStore } from '@/store/invoice';
-useAuthStore();
-
->>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
 
 const props = defineProps({
     clients: Array,
     view: String,
 });
 
-<<<<<<< HEAD
 const clienteFilter = ref('');
 
 
@@ -96,26 +69,6 @@ const filteredInvoices = computed(() => {
 
 const emits = defineEmits(['updateStatus']);
 const invoiceStore = useInvoiceStore();
-=======
-const clientStore = useClientStore();
-const invoiceStore = useInvoiceStore();
-const clients = ref([]);
-
-
-
-const updateStatus = async (id, newStatus) => {
-    try {
-        const formData = { 'client_id' : id, 'status': newStatus };
-        const response = await clientStore.updateStatus(formData);
-
-        if (response.status === 200)
-            clients.value = await clientStore.getClients();
-
-    }catch(e) {
-        console.log(e);
-    }
-}  
->>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
 
 const createInvoice = async (id, price) => {
     try {

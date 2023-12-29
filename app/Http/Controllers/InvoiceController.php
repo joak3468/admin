@@ -1,17 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Validator;
-=======
-
->>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
 use Illuminate\Http\Request;
 use App\Models\Invoice;
 
 class InvoiceController extends Controller
 {
-<<<<<<< HEAD
     public function getAllUnfinished(Request $request) {
 
         return response()->json(Invoice::get());
@@ -38,12 +33,6 @@ class InvoiceController extends Controller
         }])
         ->get();
         
-=======
-
-    public function getAll(Request $request) {
-        // agregar params para filtrar
-        $invoices = Invoice::get();
->>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
         return response()->json($invoices);
     }
 

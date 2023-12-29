@@ -25,21 +25,14 @@ const store = useAuthStore();
 let email = ref("");
 let password = ref("");
 let feedback = ref("");
-<<<<<<< HEAD
 console.log("fedback", feedback);
-=======
->>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
 const loginUser = async () => {
     const response = await store.login(email.value, password.value) 
     if(response.status == false) 
         feedback.value = "login error"
     else {
-<<<<<<< HEAD
         const redirectRoute = router.currentRoute.value.query.redirect;
         router.push(redirectRoute || { name: 'clients' });
-=======
-        router.push({name: 'clients'});
->>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
     }
 }
 
