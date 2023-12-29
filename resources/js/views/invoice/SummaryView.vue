@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <Base>
     <NavBar/>
     <div class="row">
@@ -53,10 +54,16 @@
       </tbody>
     </table>
   </Base>
+=======
+    <div>
+
+    </div>
+>>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
 </template>
 
 <script setup>
 
+<<<<<<< HEAD
 const clienteFilter = ref('');
 
 const matchesFilter = (invoice) => {
@@ -165,4 +172,10 @@ background-color: #ADD8E6;
 .status-3 {
 background-color: #90EE90;
 }
+=======
+</script>
+
+<style scoped>
+
+>>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
 </style>

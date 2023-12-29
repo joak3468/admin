@@ -5,8 +5,13 @@
         "build": "vite build"
     },
     "devDependencies": {
+<<<<<<< HEAD
         "@popperjs/core": "^2.11.8",
         "@vitejs/plugin-vue": "^4.6.0",
+=======
+        "@popperjs/core": "^2.11.6",
+        "@vitejs/plugin-vue": "^4.0.0",
+>>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
         "axios": "^1.1.2",
         "bootstrap": "^5.2.3",
         "laravel-vite-plugin": "^0.7.2",
@@ -19,10 +24,15 @@
     "dependencies": {
         "date-fns": "^2.30.0",
         "pinia": "^2.1.6",
+<<<<<<< HEAD
         "v-calendar": "^3.1.0",
         "vue-cookies": "^1.8.3",
         "vue-env": "^0.2.1-moved",
         "vue-router": "^4.2.4",
         "vue-tables-2": "^2.3.5"
+=======
+        "vue-env": "^0.2.1-moved",
+        "vue-router": "^4.2.4"
+>>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
     }
 }

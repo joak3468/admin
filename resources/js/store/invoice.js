@@ -9,6 +9,7 @@ export const useInvoiceStore = defineStore('invoice', {
         }
     },
     actions: {
+<<<<<<< HEAD
         async getInvoices(content) {
             const response  = await this.sendRequest("GET", `/invoices`);
             return await response.json();
@@ -16,6 +17,10 @@ export const useInvoiceStore = defineStore('invoice', {
         async getInvoicesWithName(content) {
             const url = content == null ? `/invoices_with_name` : `/invoices_with_name?${new URLSearchParams(content).toString()}`
             const response  = await this.sendRequest("GET", url);
+=======
+        async getInvoices() {
+            const response  = await this.sendRequest("GET", "/invoices");
+>>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
             return await response.json();
         },
 
@@ -45,13 +50,20 @@ export const useInvoiceStore = defineStore('invoice', {
                     'X-CSRF-TOKEN' : this.csrfToken,
                     'Authorization': `Bearer ${jwt}`
                 };
+<<<<<<< HEAD
                 console.log("content", content);
+=======
+
+>>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
                 const requestOptions = { method, headers };
 
                 if (content !== null) {
                     requestOptions.body = JSON.stringify(content);
                 }
+<<<<<<< HEAD
                 console.log(requestOptions);
+=======
+>>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
                 const rawResponse = await fetch(url, requestOptions);
 
                 return rawResponse;

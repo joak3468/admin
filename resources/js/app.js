@@ -7,6 +7,7 @@
 import './bootstrap';
 
 import { createApp } from 'vue';
+<<<<<<< HEAD
 import router from './router';
 import { createPinia } from 'pinia';
 import VCalendar from 'v-calendar';
@@ -14,6 +15,13 @@ import 'v-calendar/style.css';
 import { VueCookies } from 'vue-cookies';
 
 const appUrl = document.querySelector('meta[name="app-url"]').getAttribute('content');
+=======
+import router from '@/router';
+import { createPinia } from 'pinia';
+
+const appUrl = document.querySelector('meta[name="app-url"]').getAttribute('content');
+
+>>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
 const pinia = createPinia();
 
 import Main from './App.vue';
@@ -33,12 +41,15 @@ main.directive('fount-size', {
 // });
 
 //directiva con value + argumento
+<<<<<<< HEAD
 
 
 
 
 
 
+=======
+>>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
 main.directive('custom-size', {
     beforeMount: (el, binding) => {
         let size = 18;
@@ -79,4 +90,8 @@ main.directive('custom-font', {
 });
 
 
+<<<<<<< HEAD
 main.use(router).use(VCalendar, {}).use(VueCookies, {expires: '1d'}).use(pinia).mount('#main');
+=======
+main.use(router).use(pinia).mount('#main');
+>>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b

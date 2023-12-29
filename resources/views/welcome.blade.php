@@ -18,6 +18,11 @@
     </head>
 
     <body class="antialiased" id="main">
+<<<<<<< HEAD
+=======
+ 
+
+>>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>

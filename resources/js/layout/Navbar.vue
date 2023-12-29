@@ -3,7 +3,11 @@
         <div class="container-fluid">
             <div class="d-flex justify-content-start">
             <router-link :to="{ name: 'clients' }">Clientes</router-link>
+<<<<<<< HEAD
             <router-link :to="{ name: 'invoices' }" class="rl-invoices">Facturas</router-link>
+=======
+            <router-link :to="{name: 'invoices'}">Facturas</router-link>
+>>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
             </div>
             <div class="d-flex justify-content-end">
             <button type="button" @click="logout" class="btn btn-outline-danger">Logout</button>
