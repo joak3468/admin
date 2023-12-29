@@ -9,7 +9,9 @@ use App\Http\Controllers\AuthController;
 
 
 Route::post('login', [AuthController::class, 'login']);
-Route::get('invoices_with_name', [InvoiceController::class, 'getAllWithName']);
+
+Route::post('cuser', [AuthController::class, 'createUser']);
+
 
 Route::middleware('auth:sanctum')->group(function () {    
     Route::post('logout', [AuthController::class, 'logout']);
@@ -23,7 +25,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('update_client_status', [ClientController::class, 'updateStatus']);
     
     Route::get('invoices', [InvoiceController::class, 'getAll']);
-    
+    Route::get('invoices_with_name', [InvoiceController::class, 'getAllWithName']);
     Route::post('create_invoice', [InvoiceController::class, 'create']);
     Route::post('update_invoice', [InvoiceController::class, 'updateStatus']);
     Route::post('delete_invoice', [InvoiceController::class, 'delete']);

@@ -3,23 +3,11 @@
 .env.backup
 .env.production
 
-=======
-/node_modules
-/public/build
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
-.env
-.env.backup
-.env.production
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-auth.json
-npm-debug.log
-yarn-error.log
->>>>>>> 813d692f60df17c8f7fe51a2a39b62e05c458c8b
+
+/storage/app/*
+/storage/framework/*
+/storage/logs/*
+
 /.fleet
 /.idea
 /.vscode
