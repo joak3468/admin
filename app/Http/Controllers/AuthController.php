@@ -2,19 +2,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Contracts\Auth\Authenticatable;
-//use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\LoginRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    public function createUser(CreateUserRequest $request) {
+    public function createUser(Request $request) {
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hast::make($request->password)
+            'password' => Hash::make($request->password)
         ]);
 
         return response()->json([
